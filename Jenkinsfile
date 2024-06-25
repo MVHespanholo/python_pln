@@ -1,6 +1,8 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "C:\\Windowns\\System32;C:\\Users\\Marco\\AppData\\Local\\Programs\\Python\\Python312;C:\\Users\\Marco\\AppData\\Local\\Programs\\Python\\Python312\\Scripts;${env.PATH}"
     stages {
         stage('Preparação do Ambiente') {
             steps {
