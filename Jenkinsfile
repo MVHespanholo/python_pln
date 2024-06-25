@@ -1,20 +1,10 @@
 pipeline {
-    agent {
-        docker {
-            image 'devopsjourney1/myjenkinsagents:python'
-            label 'docker-agent-python'
-        }
-    }
+    agent any
+
     stages {
         stage('Preparação do Ambiente') {
             steps {
-                bat 'echo Instalação concluída'
-            }
-        }
-
-        stage('Instalação de Dependências') {
-            steps {
-                bat 'pip install python-Levenshtein'
+                bat 'pip install -r requisitos.txt'
             }
         }
 
