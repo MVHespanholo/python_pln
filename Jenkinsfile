@@ -10,11 +10,6 @@ pipeline {
                 bat 'pip install python-Levenshtein'
             }
         }
-        stage('Exibir Conteúdo de perguntas.txt') {
-            steps {
-                bat 'type perguntas.txt'
-            }
-        }
         stage('Execução do Teste Levenshtein') {
             steps {
                 bat 'python levenshtein_teste.py'
