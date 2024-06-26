@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'LIMIAR_DISTANCIA', defaultValue: '3', description: 'Limiar de distância para considerar uma pergunta semelhante')
+    }
     environment {
         PATH = "C:\\Windows\\System32;C:\\Users\\Marco\\AppData\\Local\\Programs\\Python\\Python312;C:\\Users\\Marco\\AppData\\Local\\Programs\\Python\\Python312\\Scripts;${env.PATH}"
     }
@@ -28,14 +31,8 @@ pipeline {
         }
         stage('Execução do Chatbot') {
             steps {
-                bat 'python chat_bot.py'
+                bat "python chat_bot.py ${params.LIMIAR_DISTANCIA}"  // Usar o parâmetro aqui
             }
         }
-        
-        /*parameters {
-            string(name: 'DIRETORIO', description: 'Caminho do diretorio a 
-                   }
-
-                   */
     }
 }
