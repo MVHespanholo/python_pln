@@ -9,7 +9,7 @@ def carregar_perguntas(caminho):
             if not linha or '|' not in linha:
                 print(f"Linha inválida ignorada: {linha}")
                 continue
-            pergunta, resposta = linha.split(';', 1)
+            pergunta, resposta = linha.split('|', 1)
             perguntas_respostas.append((pergunta, resposta))
     return perguntas_respostas
 
