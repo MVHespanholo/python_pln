@@ -4,7 +4,7 @@ def carregar_perguntas(caminho):
     perguntas_respostas = []
     with open(caminho, 'r', encoding='utf-8') as f:  # Adicione encoding='utf-8'
         for linha in f:
-            pergunta, resposta = linha.strip().split(';')
+            pergunta, resposta = linha.strip().split('|')
             perguntas_respostas.append((pergunta, resposta))
     return perguntas_respostas
 
