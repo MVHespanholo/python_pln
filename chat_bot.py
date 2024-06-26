@@ -25,7 +25,6 @@ if __name__ == "__main__":
     perguntas_respostas = carregar_perguntas("perguntas.txt")
     limiar_distancia = 10
     pergunta = "Quem é Você?"
-    while True:
         if pergunta == "sair":
             break
         resposta = encontrar_resposta(pergunta, perguntas_respostas, limiar_distancia)
