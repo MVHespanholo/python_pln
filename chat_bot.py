@@ -28,8 +28,8 @@ if __name__ == "__main__":
     perguntas_respostas = carregar_perguntas("perguntas.txt")
 
     while True:
-        pergunta = input("Faça uma pergunta: ")
-        if pergunta.lower() in ["sair", "exit"]:
+        pergunta = input("Faça uma pergunta: ").lower()
+        if == "sair":
             break
         resposta = encontrar_pergunta_similar(perguntas_respostas, pergunta, limiar_distancia)
         print(resposta)
