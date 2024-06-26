@@ -1,14 +1,13 @@
 import Levenshtein
 
-def carregar_perguntas(arquivo):
-  perguntas_respostas = {}
-  with open(arquivo, "r") as f:
-    for linha in f:
-      pergunta, resposta = linha.strip().split("|")
-      perguntas_respostas[pergunta.lower()] = resposta
+def carregar_perguntas(caminho):
+    perguntas_respostas = []
+    with open(caminho, 'r', encoding='utf-8') as f:  # Adicione encoding='utf-8'
+        for linha in f:
+            pergunta, resposta = linha.strip().split(';')
+            perguntas_respostas.append((pergunta, resposta))
+    return perguntas_respostas
 
-
-  return perguntas_respostas
 
 def encontrar_resposta(pergunta, perguntas_respostas, limiar_distancia=5):
   menor_distancia = float("inf")
