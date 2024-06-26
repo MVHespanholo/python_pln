@@ -6,7 +6,7 @@ def carregar_perguntas(caminho):
     with open(caminho, 'r', encoding='utf-8') as f:
         for linha in f:
             linha = linha.strip()
-            if not linha or ';' not in linha:
+            if not linha or '|' not in linha:
                 print(f"Linha inválida ignorada: {linha}")
                 continue
             pergunta, resposta = linha.split(';', 1)
