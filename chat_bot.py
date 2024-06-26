@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     while True:
         pergunta = input("Faça uma pergunta: ").lower()
-        if == "sair":
+        if pergunta == "sair":
             break
         resposta = encontrar_pergunta_similar(perguntas_respostas, pergunta, limiar_distancia)
         print(resposta)
