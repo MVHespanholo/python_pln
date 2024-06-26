@@ -31,5 +31,11 @@ pipeline {
                 bat 'python chat_bot.py'
             }
         }
+        
+        /*parameters {
+            string(name: 'DIRETORIO', description: 'Caminho do diretorio a 
+                   }
+
+                   */
     }
 }
