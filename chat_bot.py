@@ -20,16 +20,14 @@ def encontrar_pergunta_similar(perguntas_respostas, pergunta, limiar):
     return "Desculpe, não sei a resposta para isso."
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Uso: python chat_bot.py <limiar_distancia>")
+    if len(sys.argv) < 3:
+        print("Uso: python chat_bot.py <limiar_distancia> <pergunta1> [<pergunta2> ...]")
         sys.exit(1)
 
     limiar_distancia = int(sys.argv[1])
     perguntas_respostas = carregar_perguntas("perguntas.txt")
 
-    while True:
-        pergunta = input("Faça uma pergunta: ").lower()
-        if pergunta == "sair":
-            break
+    for pergunta in sys.argv[2:]:
+        pergunta = pergunta.lower()
         resposta = encontrar_pergunta_similar(perguntas_respostas, pergunta, limiar_distancia)
-        print(resposta)
+        print(f"Pergunta: {pergunta}\nResposta: {resposta}\n")
