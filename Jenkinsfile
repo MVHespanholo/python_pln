@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage('Preparação do Ambiente') {
             steps {
+                bat 'chcp 65001'  // Mudar a codificação do console para UTF-8
                 bat 'pip install -r requisitos.txt'
                 bat 'pip install python-Levenshtein'
             }
@@ -33,7 +34,7 @@ pipeline {
         stage('Execução do Chatbot') {
             steps {
                 script {
-                    def perguntas = params.PERGUNTAS.split('|').collect { it.trim() }.join(' ')
+                    def perguntas = params.PERGUNTAS.split('\\|').collect { it.trim() }.join(' ')
                     bat "python chat_bot.py ${params.LIMIAR_DISTANCIA} ${perguntas}"
                 }
             }
