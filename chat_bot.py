@@ -34,13 +34,4 @@ if __name__ == "__main__":
     for pergunta in sys.argv[2:]:
         pergunta = pergunta.lower()
         resposta = encontrar_pergunta_similar(perguntas_respostas, pergunta, limiar_distancia)
-        try:
-            print(f"Pergunta: {pergunta}\nResposta: {resposta}\n")
-        except UnicodeEncodeError as e:
-            print(f"Erro de codificação em: Pergunta: {pergunta}, Resposta: {resposta}")
-            print(f"Detalhes do erro: {e}")
-            for i, c in enumerate(f"Pergunta: {pergunta}\nResposta: {resposta}\n"):
-                try:
-                    c.encode('cp1252')
-                except UnicodeEncodeError:
-                    print(f"Caractere problemático na posição {i}: {repr(c)}")
+        print(f"Pergunta: {pergunta}\nResposta: {resposta}\n")
