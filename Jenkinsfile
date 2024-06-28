@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'LIMIAR_DISTANCIA', defaultValue: '3', description: 'Limiar de distância para considerar uma pergunta semelhante')
-        string(name: 'PERGUNTAS', defaultValue: 'Como você está?|Qual é o seu nome?', description: 'Perguntas separadas por |')
+        string(name: 'LIMIAR_DISTANCIA', defaultValue: '1', description: 'Limiar de distância para considerar uma pergunta semelhante')
+        string(name: 'PERGUNTAS', defaultValue: 'quem e voce?', description: 'Perguntas separadas por |')
     }
     environment {
         PATH = "C:\\Windows\\System32;C:\\Users\\Marco\\AppData\\Local\\Programs\\Python\\Python312;C:\\Users\\Marco\\AppData\\Local\\Programs\\Python\\Python312\\Scripts;${env.PATH}"
