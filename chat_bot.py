@@ -31,7 +31,6 @@ if __name__ == "__main__":
     limiar_distancia = int(sys.argv[1])
     perguntas_respostas = carregar_perguntas("perguntas.txt")
 
-    for pergunta in sys.argv[2:]:
-        pergunta = pergunta.lower()
-        resposta = encontrar_pergunta_similar(perguntas_respostas, pergunta, limiar_distancia)
-        print(f"Pergunta: {pergunta}\nResposta: {resposta}\n")
+    pergunta_completa = ' '.join(sys.argv[2:]).lower()
+    resposta = encontrar_pergunta_similar(perguntas_respostas, pergunta_completa, limiar_distancia)
+    print(f"Pergunta: {pergunta_completa}\nResposta: {resposta}\n")
