@@ -54,7 +54,7 @@ pipeline {
                         <p>Build URL: ${env.BUILD_URL}</p>
                     """,
                     recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-                    to: 'email@example.com' // Substitua pelo email desejado
+                    to: 'marcos.viniciushespanholo@gamil.com' // Substitua pelo email desejado
                 )
             }
         }
